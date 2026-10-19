@@ -26,6 +26,31 @@ python3 -m http.server 8000   # → http://localhost:8000
 
 …or just double-click `index.html` (data is embedded as JS files, so `file://` works too).
 
+## Deployed
+
+- **Live site:** https://ayhemkahridev.github.io/TheEnshittificationIndex/ (GitHub Pages, `main` branch, `/` root)
+- **Repo:** https://github.com/AyhemKahriDev/TheEnshittificationIndex
+
+### Custom domain (pending)
+
+`worsewatch.eu.org` is the target custom domain via the free EU.org registry
+(human-reviewed, days to weeks). DNS is already fully prepared and hostable:
+
+| | |
+| --- | --- |
+| Authoritative NS (deSEC) | `ns1.desec.io`, `ns2.desec.org` |
+| Apex | `A`/`AAAA` → GitHub Pages IPs (185.199.108–111.153 / 2606:50c0:8000–3::153) |
+| `www` | `CNAME ayhemkahridev.github.io.` |
+
+EU.org domain request checklist (browser, once a week):
+
+1. Log in at `nic.eu.org/arf/` + handle from `.env` (`CONTACT_HANDLE`).
+2. Dashboard → Domains → **Add** a domain request for `worsewatch` (sub of `eu.org`).
+3. Request 2–3 name servers: `ns1.desec.io`, `ns2.desec.org`.
+4. Submit; wait for the review email. The deSEC servers already answer authoritatively for the zone, which is their #1 validation criterion.
+
+When approved: set `worsewatch.eu.org` (and `www`) as custom domain on the repo's Pages settings → enforce HTTPS.
+
 ## Pages
 
 - **The Index** — all tracked services, score sparks, category filters, live search
