@@ -1,0 +1,6 @@
+# deploy secrets (deSEC API token etc.) — never commit
+.env
+
+# OS junk
+.DS_Store
+Thumbs.db
